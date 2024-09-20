@@ -1,4 +1,12 @@
-.wrapper {
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.wrapper { 
     margin: 2rem auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -8,7 +16,7 @@
     "main main main main aside aside"
     "sect-a sect-a sect-b sect-b sect-c sect-c"
     "sect-d sect-d sect-e sect-e sect-f sect-f"
-    "footer footer footer footer footer footer";
+    "footer footer footer footer footer footer"; 
 }
 
 header {
@@ -49,4 +57,28 @@ aside {
 
 footer {
     grid-area: footer;
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 1rem auto;
+    }
+    
+    aside {
+        display: none;
+    }
+
+    .wrapper {
+        margin: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15rem 10rem 8rem 8rem 8rem 10rem;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "aside aside"
+        "sect-a sect-b"
+        "sect-c sect-d"
+        "sect-e sect-f"
+        "footer footer";
+    }
 }
